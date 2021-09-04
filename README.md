@@ -9,4 +9,4 @@ Function of the system:
 6) Transfer money to another account within the database
 .Here some situation will be handle. Such as enter a wrong transfering account, not enough fund, the cardnumber not mached with Luhn algorithm, 
 8) Close the account (delete from database)
-The programm will interact with database and have a user interface. The user interface will keep on running until the user want to stop the programm by entering '0'
+9)The programm will interact with database and have a user interface. The user interface will keep on running until the user want to stop the programm by entering '0'
