@@ -1,5 +1,5 @@
 # JetbrainBankingDatabase
-This is a simple banking system, which can create creditcard number (the number are 16 digits and are checked with Luhn-algorithm) and pin. The created info will be stored in a database and can be deleted if wanted
+This is a simple banking system, which can create creditcard number (the number are 16 digits and are checked with Luhn-algorithm) and pin. The created info will be stored in a database and can be deleted if wanted.
 Function of the system:
 1) Create credit card and pin
 2) Login into the created account
