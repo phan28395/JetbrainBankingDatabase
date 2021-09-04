@@ -48,11 +48,11 @@ class CardNumber:
 class ActionWithAccount:
     def __init__(self):
         pass
-    def balance_showing(self):
+    def balance_showing(self): #Showing account balance
         cur.execute('SELECT balance FROM card WHERE number = (?) and pin = (?);',(card_input, pin_input))
         balance = cur.fetchone()
         return print('Balance:', balance[0])
-    def add_income(self):
+    def add_income(self): #Adding balance into account
         print('Enter income:')
         income = int(input())
         cur.execute("""UPDATE card
@@ -61,7 +61,7 @@ class ActionWithAccount:
         conn.commit()
         return print('Income was added!')
 
-    def do_transfer(self):
+    def do_transfer(self): #Execute a tranfer to another account
         print('Transfer\nEnter card number:')
         card_input_transfer = input()
         tuple_cardnum = []
@@ -90,7 +90,7 @@ class ActionWithAccount:
                                 SET balance = balance + (?)
                                 WHERE number = (?);""", (money_transfer, card_input_transfer))
                 conn.commit()
-    def Luhn_algo_checker(self,card_num):
+    def Luhn_algo_checker(self,card_num): # Return true if the cardnumber matched Luhn algo. Return false otherwise
         list_int = []
         for i in range(len(card_num)-1):
                 list_int.append(int(card_num[i]))
@@ -103,12 +103,10 @@ class ActionWithAccount:
             return True
         else:
             return False
-    def close_account(self):
+    def close_account(self): # Close the account, delete from database
         cur.execute('DELETE FROM card WHERE number = (?);', (card_input,))
         print('The account has been closed!')
         conn.commit()
-    def log_out(self):
-        pass
 
 
 while True:
